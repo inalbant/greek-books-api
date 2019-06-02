@@ -1,32 +1,31 @@
-import React, { Component } from 'react';
-import axios from 'axios'
-import Container from 'react-bootstrap/Container'
-import BookCovers from './components/BookCovers';
+import React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
 
-class App extends Component {
-  state = {
-    books: []
-  }
+import Books from './components/Books'
+//import BooksTest from './components/BooksTest'
 
-  componentDidMount() {
-    axios.post(`http://nyx.vima.ekt.gr:3000/api/books`)
-      .then(response => this.setState({ books: response.data.books }))
-  }
+const App = () => {
 
-  render() {
-    if (this.state.books.length > 0) {
-      return (
-        <div className="App">
-          <Container>
-            <BookCovers books={this.state.books} />
-          </Container>
-        </div>
-      )
-    } else {
-      return <div className="App">Loading..</div>
-    }
-  }
-
+  // function getParams(location) {
+  //   const searchParams = new URLSearchParams(location.search);
+  //   return {
+  //     query: searchParams.get("query") || ""
+  //   };
+  // }
+  
+  return (
+    <BrowserRouter>
+      <Route path="/" component={Books} />
+      {/* <Route
+        path="/"
+        render={({ location, history }) => {
+          const { query } = getParams(location);
+          return <BooksTest query={query} history={history} />;
+        }}
+      /> */}
+    </BrowserRouter>
+  )
 }
+
 
 export default App;
