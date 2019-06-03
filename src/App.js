@@ -1,14 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
+import { createBrowserHistory } from "history";
 
+import './App.css';
 import Books from './components/Books';
 
-const App = () => {
 
+const customHistory = createBrowserHistory();
+
+
+const App = () => {
   return (
-    <BrowserRouter>
-      <Route path="/books" component={Books} />
-    </BrowserRouter>
+    <Router history={customHistory}>
+      <Route path="/" component={Books} />
+    </Router>
   )
 }
 
