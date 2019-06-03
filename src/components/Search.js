@@ -1,14 +1,13 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button'
-
 
 function Search(props) {
-   return (
-      <div>
-         <input type="text" value={props.filters} onChange={props.onChange} />
-         <Button variant="outline-secondary" size="sm" onClick={props.onClick}>Search</Button>
-      </div>
-   )
+  return (
+    <div>
+      <label for="search-input" style={{ marginRight: '0.5rem' }} >Enter search query: </label>
+      <input type="text" id="search-input" value={props.filters} onChange={props.onChange} style={{ marginRight: '1rem' }} />
+      <button onClick={props.onClick}>Search</button>
+    </div>
+  )
 }
 
 export default Search;

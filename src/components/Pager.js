@@ -1,7 +1,6 @@
 import React from 'react';
 import { Pagination } from 'react-bootstrap';
 
-
 const Pager = (props) => {
   if (!props || !props.page) {
     return null;
@@ -35,7 +34,7 @@ const Pager = (props) => {
       {renderPageNumbers}
       <Pagination.Next />
       <Pagination.Last />
-    </Pagination>
+    </Pagination>    
   )
 }
 

@@ -13,7 +13,8 @@ class Books extends Component {
     count: 0,
     page: 1,
     itemsPerPage: 20,
-    filters: ""
+    filters: "",
+    pageOfItems: []
   }
 
   componentDidMount() {
@@ -68,6 +69,7 @@ class Books extends Component {
       });
   }
 
+  
   render() {
     const { books, count, page, itemsPerPage } = this.state;
 
